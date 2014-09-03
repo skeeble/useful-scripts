@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# write out last reboot date to file, then reboot, simples
+echo `date +"%d-%m-%Y"` > /var/www/lastreboot
+reboot
