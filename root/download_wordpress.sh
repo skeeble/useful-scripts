@@ -3,7 +3,10 @@
 #define vars
 MYDIR=`pwd`
 DATE=`date +"%Y-%m-%d-%H%M"`
-DESTFOLDER={"$1":"~/wordpress/"}
+DESTFOLDER="$1"
+if [ ! -d "$DESTFOLDER" ]; then
+	DESTFOLDER=~/wordpress/
+fi
 TEMPFOLDER="/tmp/$DATE-wordpress-temp"
 
 #move to temp folder
@@ -14,10 +17,12 @@ wget http://wordpress.org/latest.zip
 unzip -o -u latest.zip -d "$TEMPFOLDER"
 
 #relocate files
-mv "$TEMPFOLDER/wordpress/*" "$DESTFOLDER"
+mkdir -p "$DESTFOLDER"
+mv "$TEMPFOLDER/wordpress/"* "$DESTFOLDER"
 
 #clean up
-rm -r {"$TEMPFOLDER","/tmp/latest.zip"}
+rm -r "$TEMPFOLDER"
+rm "/tmp/latest.zip"
 
 #restore dir
 cd "$MYDIR"
