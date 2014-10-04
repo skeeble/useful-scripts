@@ -3,7 +3,7 @@ gen_pw.sh
 
  usage: (generate 16char random password) 
 ```text
-./gen_pw.sh 16
+gen_pw.sh 16
 ```
 
 create_db.sh
@@ -11,7 +11,7 @@ create_db.sh
 
  usage: 
 ```text
-mysql -u root -p < `./create_db.sh wordpress`
+create_db.sh wordpress | mysql -u root -p 
 ```
 
 setup_swap.sh
@@ -19,5 +19,5 @@ setup_swap.sh
 
  usage: 
 ```text
-sudo ./setup_swap.sh
+sudo setup_swap.sh
 ```
