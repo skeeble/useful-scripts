@@ -35,13 +35,13 @@ CONFIG_FILE="$CONFIGFOLDER/sites-available/$NAMECLEAN"
 # backup present working directory
 MYDIR=`pwd`
 # make the config based upon install type (updated to CURL for post DATA)
-curl -o "$CONFIG_FILE" --data-urlencode "type=$TYPE&port=$PORT&url=$URL&name=$NAMECLEAN" http://www.lewiscowles.co.uk/recipies/$1
+curl -o "$CONFIG_FILE" --data-urlencode "type=$TYPE&port=$PORT&url=$URL&name=$NAMECLEAN" http://www.lewiscowles.co.uk/recipies/$SYSTEM
 #wget -O $CONFIG_FILE "http://www.lewiscowles.co.uk/recipies/nginx/$TYPE/$PORT/$URL/$NAMECLEAN"
 # chmod +x $config_file
 chmod +x $CONFIG_FILE
 # ln -s $config_file $CONFIGFOLDER/sites-enabled/$name
 ln -s $CONFIG_FILE $CONFIGFOLDER/sites-enabled/$NAMECLEAN
 
-# restart nginx
-service nginx restart
+# restart (sub-)system
+service $SYSTEM restart
 
