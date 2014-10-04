@@ -1,3 +1,11 @@
+gen_pw.sh
+=============
+
+ usage: (generate 16char random password) 
+```text
+./gen_pw.sh 16
+```
+
 create_db.sh
 =============
 
