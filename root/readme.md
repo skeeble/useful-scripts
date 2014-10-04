@@ -21,3 +21,11 @@ setup_swap.sh
 ```text
 sudo setup_swap.sh
 ```
+
+download_wordpress.sh
+=============
+
+ usage: 
+```text
+download_wordpress.sh /usr/share/nginx/vhosts/wordpress
+```
