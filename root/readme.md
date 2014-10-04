@@ -2,4 +2,4 @@ create_db.sh
 =============
 
  usage: 
-`mysql -u root -p < `./create_db.sh wordpress``
+"mysql -u root -p < `./create_db.sh wordpress`"
